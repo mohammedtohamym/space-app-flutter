@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:space_app/exploer_screen.dart';
 
-class ExploreScreen extends StatelessWidget{
+class InitialScreen extends StatelessWidget{
+  static const String routName = 'initial_screen';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,7 +35,9 @@ class ExploreScreen extends StatelessWidget{
               children: [
                 Padding(
                   padding: const EdgeInsets.all(10.0),
-                  child: ElevatedButton(onPressed: (){},
+                  child: ElevatedButton(onPressed: (){
+                    Navigator.pushReplacementNamed(context, ExploreScreen.routeName);
+                  },
                     child: Padding(
                       padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 2),
                       child: Row(
