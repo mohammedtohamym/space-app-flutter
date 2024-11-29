@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:space_app/exploer_screen.dart';
 
 class InitialScreen extends StatelessWidget{
-  static const String routName = 'initial_screen';
+  static const String routeName = 'initial_screen';
 
   @override
   Widget build(BuildContext context) {
@@ -11,13 +11,16 @@ class InitialScreen extends StatelessWidget{
         child: Stack(
           alignment: Alignment.centerLeft,
           children: [
+            /* back ground color */
             Container(
               color: Color(0xff0E0E0E),
             ),
+            /* back ground Image */
             Image.asset(
               'assets/images/48e3ac1944450fcae09e68a9ccd37c17 1.png',
               fit: BoxFit.cover,
             ),
+            /* Explore The Universe Text */
             Padding(
               padding: const EdgeInsets.all(10.0),
               child: Text(
@@ -29,17 +32,21 @@ class InitialScreen extends StatelessWidget{
                 ),
               ),
             ),
+            /* Explore Button */
             Column(
               mainAxisAlignment: MainAxisAlignment.end,
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 Padding(
-                  padding: const EdgeInsets.all(10.0),
-                  child: ElevatedButton(onPressed: (){
-                    Navigator.pushReplacementNamed(context, ExploreScreen.routeName);
-                  },
+                  padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 30),
+                  child: ElevatedButton(
+                    onPressed:
+                        (){
+                      Navigator.pushReplacementNamed(context, ExploreScreen.routeName);
+                      },
                     child: Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 2),
+                      padding: const EdgeInsets.symmetric(vertical: 18, horizontal: 2),
+                      /* Explore Text and arrow Icon */
                       child: Row(
                         children: [
                           Text('Explore',
