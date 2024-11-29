@@ -11,48 +11,86 @@ class PlanetSwipe extends StatefulWidget{
 }
 
 class _PlanetSwipeState extends State<PlanetSwipe>{
-  int planetValue = 1;
+
+  List<Widget> planets = [
+    Container(
+      // color: Colors.red,
+      child: Image.asset('assets/images/earth.png',
+        fit: BoxFit.cover,
+      ),
+    ),
+    Container(
+      // color: Colors.red,
+      child: Image.asset('assets/images/saturn.png',
+        fit: BoxFit.cover,
+      ),
+    ),
+    Container(
+      child: GestureDetector(
+        onTap: () {
+          // planetValue = 0;
+          // print('###############');
+          // print(planetValue);
+          // setState(() {
+          //
+          // });
+        },
+      ),
+    ),
+  ];
+
+  PageController _controller = PageController();
 
   @override
   Widget build(BuildContext context) {
-    return
-
-      Expanded(
-
-        child: PageView(
-
-          controller: PageController(initialPage: widget.index,),
-
-          onPageChanged: (value) {
-            print(value);
-          },
-          children: [
-            Container(
-              // color: Colors.red,
-              child: Image.asset('assets/images/earth.png',
-                fit: BoxFit.cover,
-              ),
-            ),
-            Container(
-              // color: Colors.red,
-              child: Image.asset('assets/images/saturn.png',
-                fit: BoxFit.cover,
-              ),
-            ),
-            Container(
-              child: GestureDetector(
-                onTap: () {
-                  planetValue = 0;
-                  print('###############');
-                  print(planetValue);
-                  setState(() {
-
-                  });
-                },
-              ),
-            ),
-          ],
+    return Expanded(
+        child: PageView.builder(
+            itemBuilder: (context, index)=> planets[widget.index],
+          itemCount: 1,
+          controller: _controller,
         )
     );
   }
+  void onButtonPressed(int i){
+    _controller.jumpToPage(i);
+    setState(() {
+
+    });
+  }
+
 }
+
+//PageView(
+//
+//           controller: PageController(initialPage: widget.index,),
+//
+//           onPageChanged: (value) {
+//             print(value);
+//           },
+//           children: [
+//             Container(
+//               // color: Colors.red,
+//               child: Image.asset('assets/images/earth.png',
+//                 fit: BoxFit.cover,
+//               ),
+//             ),
+//             Container(
+//               // color: Colors.red,
+//               child: Image.asset('assets/images/saturn.png',
+//                 fit: BoxFit.cover,
+//               ),
+//             ),
+//             Container(
+//               child: GestureDetector(
+//                 onTap: () {
+//                   planetValue = 0;
+//                   print('###############');
+//                   print(planetValue);
+//                   setState(() {
+//
+//                   });
+//                 },
+//               ),
+//             ),
+//           ],
+//         )

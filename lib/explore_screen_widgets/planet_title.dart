@@ -6,6 +6,7 @@ class PlantTitle extends StatefulWidget{
   List<String> planets ;
   int index  ;
 
+
   PlantTitle({required this.planets, required this.index,
               required this.myRight, required this.myLeft});
 
@@ -30,7 +31,7 @@ class _planetTitle extends State<PlantTitle>{
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             SwipeButton(iconOfButton: Icons.arrow_back,
-              onButtonPress: widget.myLeft,),
+              onButtonPress: widget.myLeft),
             Text(widget.planets[widget.index],style: TextStyle(
               fontWeight: FontWeight.bold,
               fontSize: 20,

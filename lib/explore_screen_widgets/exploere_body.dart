@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:space_app/explore_screen_widgets/planet_title.dart';
 import 'package:space_app/explore_screen_widgets/planets.dart';
+import 'package:space_app/plant_data_class.dart';
 
 import 'navigation_button.dart';
 
@@ -15,6 +16,11 @@ class  _ExplorerBodyState extends State<ExplorerBody>{
   List<String> planets = ['Earth', 'Mars', 'Mercury'];
   int index = 0 ;
 
+  // Future <List<List>> planetData = PlanetData().loadData();
+  // List<List> planetDataList = await plantData;
+
+  // PlanetSwipe planetSwipe = PlanetSwipe(index: 1,);
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -26,7 +32,7 @@ class  _ExplorerBodyState extends State<ExplorerBody>{
 
         /* Showing planet Image */
         // Todo: this should be stateful widget
-        PlanetSwipe(index: index,),
+        PlanetSwipe(index: index),
 
         /* Showing planet title & swiping buttons */
         //

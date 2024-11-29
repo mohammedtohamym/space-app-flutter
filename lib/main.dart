@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:space_app/exploer_screen.dart';
 import 'package:space_app/initial_screen.dart';
+import 'package:space_app/plant_data_class.dart';
 import 'package:space_app/plant_screen.dart';
 
 void main(){
   runApp(BasicScreen());
+  PlanetData planetData = PlanetData();
+  planetData.loadData(2,2);
 }
 
 class BasicScreen extends StatelessWidget{

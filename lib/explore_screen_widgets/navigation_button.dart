@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:space_app/plant_screen.dart';
 import '../exploer_screen.dart';
 
 class PlanetNavigtionButton extends StatefulWidget{
@@ -26,7 +27,7 @@ class _PlanetNavigationButtonState extends State<PlanetNavigtionButton>{
       /* Navigation to selected planet screen*/
       ElevatedButton(
         onPressed: (){
-          Navigator.pushReplacementNamed(context, ExploreScreen.routeName);
+          Navigator.pushReplacementNamed(context, PlanetScreen.routeName);
         },
         style: ElevatedButton.styleFrom(
           backgroundColor: Colors.red,
