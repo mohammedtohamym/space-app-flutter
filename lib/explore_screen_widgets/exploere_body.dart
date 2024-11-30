@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:space_app/explore_screen_widgets/planet_title.dart';
 import 'package:space_app/explore_screen_widgets/planets.dart';
 import 'package:space_app/plant_data_class.dart';
@@ -13,7 +14,21 @@ class ExplorerBody extends StatefulWidget{
 }
 
 class  _ExplorerBodyState extends State<ExplorerBody>{
-  List<String> planets = ['Earth', 'Mars', 'Mercury'];
+  List<String> planets = ['Sun', 'Mercury', 'Venus', 'Earth', 'Mars', 'Jupiter', 'Saturn', 'Uranus', 'Neptune'];
+
+
+  List<String> imagePaths = [
+    'assets/images/sun.png',
+    'assets/images/mercury.png',
+    'assets/images/venus.png',
+    'assets/images/earth.png',
+    'assets/images/mars.png',
+    'assets/images/jupiter.png',
+    'assets/images/saturn.png',
+    'assets/images/uranus.png',
+    'assets/images/neptune.png'
+  ];
+
   int index = 0 ;
 
   // Future <List<List>> planetData = PlanetData().loadData();
@@ -32,8 +47,12 @@ class  _ExplorerBodyState extends State<ExplorerBody>{
 
         /* Showing planet Image */
         // Todo: this should be stateful widget
-        PlanetSwipe(index: index),
-
+        // PlanetSwipe(index: index),
+        //
+        Expanded(
+          child: Image.asset(imagePaths[index]),
+          // ),
+        ),
         /* Showing planet title & swiping buttons */
         //
         //
@@ -51,7 +70,7 @@ class  _ExplorerBodyState extends State<ExplorerBody>{
   /* these two functions are responsible for changing the text on the button */
   void myRight(){
     index++;
-    if(index > 2){
+    if(index > 8){
       index = 0;
     }
     setState(() {
@@ -61,7 +80,7 @@ class  _ExplorerBodyState extends State<ExplorerBody>{
   void myLeft(){
     index--;
     if(index < 0){
-      index = 2;
+      index = 8;
     }
     setState(() {
 

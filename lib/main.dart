@@ -6,8 +6,8 @@ import 'package:space_app/plant_screen.dart';
 
 void main(){
   runApp(BasicScreen());
-  PlanetData planetData = PlanetData();
-  planetData.loadData(2,2);
+  // PlanetData planetData = PlanetData();
+  // planetData.loadData();
 }
 
 class BasicScreen extends StatelessWidget{

@@ -1,6 +1,12 @@
 import 'package:flutter/material.dart';
 
+import '../explore_screen_widgets/planet_title.dart';
+
 class NavBarGradient extends StatefulWidget{
+
+  String text;
+  NavBarGradient({this.text = 'Which Planet\nWould you like to exploer?'});
+
   @override
   State<StatefulWidget> createState() {
     return _NavBarGradientState();
@@ -63,7 +69,7 @@ class _NavBarGradientState extends State<NavBarGradient>{
                   children: [
                     Padding(
                       padding: const EdgeInsets.all(20.0),
-                      child: Text('Which Planet\nWould you like to exploer?',style: TextStyle(
+                      child: Text(widget.text,style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 20,
                         color: Colors.white,
@@ -73,6 +79,19 @@ class _NavBarGradientState extends State<NavBarGradient>{
                     ),
                   ],
                 ),
+              ],
+            ),
+            Column(
+              children: [
+                Row(
+                  children: [
+                    Container(
+                      margin: EdgeInsets.symmetric(vertical: 50, horizontal: 20),
+                        height: 70 ,
+                        width: 70,
+                        child: SwipeButton(iconOfButton: Icons.arrow_back, onButtonPress: (){Navigator.of(context).pop();}))
+                  ],
+                )
               ],
             )
           ],

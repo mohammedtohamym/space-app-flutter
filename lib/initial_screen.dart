@@ -1,8 +1,12 @@
+import 'package:csv/csv.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:space_app/exploer_screen.dart';
 
 class InitialScreen extends StatelessWidget{
   static const String routeName = 'initial_screen';
+
+  // late List<List> dataList;
 
   @override
   Widget build(BuildContext context) {
@@ -42,8 +46,10 @@ class InitialScreen extends StatelessWidget{
                   child: ElevatedButton(
                     onPressed:
                         (){
-                      Navigator.pushReplacementNamed(context, ExploreScreen.routeName);
-                      },
+                          Navigator.pushReplacementNamed(context, ExploreScreen.routeName);
+
+
+                        },
                     child: Padding(
                       padding: const EdgeInsets.symmetric(vertical: 18, horizontal: 2),
                       /* Explore Text and arrow Icon */
@@ -76,4 +82,27 @@ class InitialScreen extends StatelessWidget{
       ),
     );
   }
+
+  // void onButtonPress() async {
+  //   PlanetData planetData = PlanetData();
+  //   await planetData.loadData();
+  //   dataList = planetData.dataList;
+  //   print(planetData.dataList);
+  //   Navigator.pushReplacementNamed(this.context, ExploreScreen.routeName,arguments: dataList);
+  // }
 }
+
+// class PlanetData {
+//   late List<List> dataList;
+//
+//   PlanetData() {
+//     loadData();
+//   }
+//
+//   loadData() async {
+//     final rawData = await rootBundle.loadString('assets/data/solar.csv');
+//     List<List<dynamic>> listData = CsvToListConverter().convert(rawData);
+//     dataList = listData;
+//     return (listData);
+//   }
+// }

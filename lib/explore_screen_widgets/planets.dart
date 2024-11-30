@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 
 class PlanetSwipe extends StatefulWidget{
   int index;
+
+
+
   PlanetSwipe({required this.index});
 
   @override
@@ -13,6 +16,42 @@ class PlanetSwipe extends StatefulWidget{
 class _PlanetSwipeState extends State<PlanetSwipe>{
 
   List<Widget> planets = [
+    Container(
+      // color: Colors.red,
+      child: Image.asset('assets/images/earth.png',
+        fit: BoxFit.cover,
+      ),
+    ),
+    Container(
+      // color: Colors.red,
+      child: Image.asset('assets/images/saturn.png',
+        fit: BoxFit.cover,
+      ),
+    ),
+    Container(
+      // color: Colors.red,
+      child: Image.asset('assets/images/earth.png',
+        fit: BoxFit.cover,
+      ),
+    ),
+    Container(
+      // color: Colors.red,
+      child: Image.asset('assets/images/saturn.png',
+        fit: BoxFit.cover,
+      ),
+    ),
+    Container(
+      // color: Colors.red,
+      child: Image.asset('assets/images/earth.png',
+        fit: BoxFit.cover,
+      ),
+    ),
+    Container(
+      // color: Colors.red,
+      child: Image.asset('assets/images/saturn.png',
+        fit: BoxFit.cover,
+      ),
+    ),
     Container(
       // color: Colors.red,
       child: Image.asset('assets/images/earth.png',

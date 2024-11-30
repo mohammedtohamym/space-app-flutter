@@ -27,7 +27,9 @@ class _PlanetNavigationButtonState extends State<PlanetNavigtionButton>{
       /* Navigation to selected planet screen*/
       ElevatedButton(
         onPressed: (){
-          Navigator.pushReplacementNamed(context, PlanetScreen.routeName);
+          Navigator.pushNamed(
+              context, PlanetScreen.routeName,
+          arguments:  widget.index);
         },
         style: ElevatedButton.styleFrom(
           backgroundColor: Colors.red,
