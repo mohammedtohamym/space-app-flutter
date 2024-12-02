@@ -11,6 +11,7 @@ class PlanetData{
     final rawData = await rootBundle.loadString('assets/data/solar.csv');
     List<List<dynamic>> listData = CsvToListConverter().convert(rawData);
     dataList = listData;
+    // print(dataList);
     return(listData);
   }
 }
