@@ -8,4 +8,3 @@ This projects acts as a digital handbook to guide the user about different celes
 ![SpaceApp_4](https://github.com/user-attachments/assets/5c134037-ddff-4770-84ad-11af5aa63e7d)
 
 
-- [Live Demo](https://appetize.io/app/b_zv2ow4i7c6a7f2uer4o5hjrfh4)
